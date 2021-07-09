@@ -10,7 +10,7 @@ const ButtonContainer = styled(motion.div)`
   border: 2px solid white;
   display: flex;
   justify-content: center;
-  width: 12vw;
+  width: 10rem;
   border-radius: 2rem;
   background-color: rgb(70, 162, 159);
   border: none;

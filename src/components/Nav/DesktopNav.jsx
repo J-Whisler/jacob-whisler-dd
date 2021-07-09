@@ -124,12 +124,15 @@ const DesktopNavContainer = styled(motion.div)`
   grid-template-rows: 1fr 2fr 1fr;
 
   .logo {
+    /* border: 2px solid green; */
     width: 100%;
-    /* height: 35vh; */
-    /* margin: 0 rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
+      /* border: 2px solid red; */
       width: 100%;
-      height: 15vw;
+      height: 17vw;
       object-fit: cover;
     }
   }
@@ -185,6 +188,9 @@ const DesktopNavContainer = styled(motion.div)`
         width: 70%;
       }
     }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
