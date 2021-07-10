@@ -10,14 +10,14 @@ const ButtonContainer = styled(motion.div)`
   border: 2px solid white;
   display: flex;
   justify-content: center;
-  width: 10rem;
+  width: 13.2vw;
   border-radius: 2rem;
   background-color: rgb(70, 162, 159);
   border: none;
   margin: auto;
-  font-size: 1.8rem;
+  font-size: 1.8vw;
   letter-spacing: 0.1rem;
-  padding: 0.3rem;
+  padding: 0.7vw;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {

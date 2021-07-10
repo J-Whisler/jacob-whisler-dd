@@ -10,10 +10,9 @@ const MobileNav = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  console.log(open);
 
   return (
-    <MobileNavContainer>
+    <MobileNavContainer className="bg-medium">
       <div className="mobile-logo">
         <img src={Logo} alt="logo" />
       </div>
@@ -82,18 +81,16 @@ const MobileNav = () => {
 
 const MobileNavContainer = styled(motion.div)`
   display: none;
-  position: sticky;
-  /* width: 100%; */
+  position: fixed;
+  width: 100%;
 
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-bottom: 2px solid rgb(116, 115, 115);
+    border-bottom: 7px solid rgb(116, 115, 115);
     height: 17vh;
     padding: 0 2rem;
-    /* position: static;
-    width: 100%;
-    top: 0; */
+
     z-index: 10;
     .mobile-logo {
       height: 17vh;
@@ -108,6 +105,7 @@ const MobileNavContainer = styled(motion.div)`
       justify-content: center;
       align-items: end;
       height: 17vh;
+      border-bottom: 2px solid rgb(116, 115, 115);
       .hamburger {
         margin-right: 5vw;
         cursor: pointer;
@@ -123,11 +121,14 @@ const MobileNavContainer = styled(motion.div)`
         height: 83vh;
         position: absolute;
         top: 17vh;
-        left: 0.1vw;
+        left: 0;
+        border-bottom: 4px solid rgb(70, 162, 159);
+
         transform: translateX(100vw);
         transition: all 0.5s ease-in-out;
         &.links-active {
           transform: translateX(0);
+          /* position: sticky; */
         }
         ul {
           display: flex;

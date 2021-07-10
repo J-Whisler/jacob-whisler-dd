@@ -110,7 +110,9 @@ const DesktopNav = () => {
         </div>
 
         <div className="resume-button-container">
-          <Button className="resume-button">Resume</Button>
+          <a href="/" className="resume-button">
+            Resume
+          </a>
         </div>
       </motion.div>
     </DesktopNavContainer>
@@ -185,7 +187,25 @@ const DesktopNavContainer = styled(motion.div)`
     }
     .resume-button-container {
       .resume-button {
-        width: 70%;
+        display: flex;
+        justify-content: center;
+        width: 10vw;
+        border-radius: 2rem;
+        background-color: rgb(70, 162, 159);
+        border: none;
+        margin: auto;
+        font-size: 1.8vw;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        letter-spacing: 0.2vw;
+        padding: 0.7vw;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          box-shadow: 0px 0px 20px rgba(70, 162, 159, 0.7);
+          text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+          transform: scale(1.05);
+        }
       }
     }
   }

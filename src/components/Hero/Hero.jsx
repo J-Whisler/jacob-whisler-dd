@@ -78,12 +78,10 @@ const HeroContainer = styled.div`
       object-fit: cover;
     }
     .hero-text {
-      /* border: 2px solid blue; */
       position: relative;
       width: 75%;
       top: 16rem;
       left: 5rem;
-      z-index: 1000;
 
       h2 {
         font-size: 6vw;
