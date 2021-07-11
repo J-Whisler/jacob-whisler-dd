@@ -55,6 +55,24 @@ const buttonAnim = {
   },
 };
 
+const gifAnim = {
+  hidden: {
+    opacity: 0,
+    y: "50vh",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 1,
+      stiffness: 60,
+      damping: 10,
+      delay: 1.5,
+    },
+  },
+};
+
 const Work = () => {
   const [activeProject, setActiveProject] = useState(0);
 
@@ -70,13 +88,7 @@ const Work = () => {
         animate={inView ? "show" : ""}
       >
         <div className="work-content-top primary-text-color">
-          <div
-            className="work-content-top-headers"
-            // variants={componentAnim}
-            // ref={ref}
-            // initial="initial"
-            // animate={inView ? "animate" : ""}
-          >
+          <div className="work-content-top-headers">
             <h4
               className={activeProject === 1 ? "active" : ""}
               onClick={() => setActiveProject(1)}
@@ -122,20 +134,40 @@ const Work = () => {
                   variants={pAnim}
                   initial="hidden"
                   animate="show"
+                  exit="exit"
                 >
-                  <a href="/">Sunshine</a> is a weather app created using the{" "}
-                  <a href="https://openweathermap.org/api">Open Weather API</a>.
-                  This weather app gives users the date, current weather and
+                  <a
+                    href="https://weather-jw.herokuapp.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Sunshine
+                  </a>{" "}
+                  is a weather app created using the{" "}
+                  <a
+                    href="https://openweathermap.org/api"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open Weather API
+                  </a>
+                  . This weather app gives users the date, current weather and
                   current weather conditions. View a gif of the project or click
                   the button below to view the website!
                 </motion.p>
+
                 <motion.div
                   className="work-button-container"
                   variants={buttonAnim}
                   initial="hidden"
                   animate="show"
                 >
-                  <a href="/" className="work-button">
+                  <a
+                    href="https://weather-jw.herokuapp.com/"
+                    className="work-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     See Sunshine!
                   </a>
                 </motion.div>
@@ -149,16 +181,17 @@ const Work = () => {
                   variants={pAnim}
                   initial="hidden"
                   animate="show"
-                  className="primary-text-color"
-                  // variants={pAnim}
-                  // initial="initial"
-                  // animate="animate"
-                  // exit="exit"
                 >
-                  <a href="/">Discover</a> is a landing page that I created for
-                  a fake Icelandic Travel company, inspired by my trip there in
-                  2019! View a gif of the project or click the button below to
-                  view the website!
+                  <a
+                    href="https://discover-isl.herokuapp.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Discover
+                  </a>{" "}
+                  is a landing page that I created for a fake Icelandic Travel
+                  company, inspired by my trip there in 2019! View a gif of the
+                  project or click the button below to view the website!
                 </motion.p>
 
                 <motion.div
@@ -166,9 +199,13 @@ const Work = () => {
                   variants={buttonAnim}
                   initial="hidden"
                   animate="show"
-                  className="work-button-container"
                 >
-                  <a href="/" className="work-button">
+                  <a
+                    href="https://discover-isl.herokuapp.com"
+                    className="work-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     See Discover!
                   </a>
                 </motion.div>
@@ -182,15 +219,21 @@ const Work = () => {
                   variants={pAnim}
                   initial="hidden"
                   animate="show"
-                  className="primary-text-color"
                   // variants={pAnim}
                   // initial="initial"
                   // animate="animate"
                   // exit="exit"
                 >
-                  <a href="/">R.P.S.</a> This is my take on the classic game
-                  "Rock, Paper, Scissors". View a gif of the project or click
-                  the button below to view the website!
+                  <a
+                    href="https://rock-paper-scissors-jw.herokuapp.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    R.P.S.
+                  </a>{" "}
+                  This is my take on the classic game "Rock, Paper, Scissors".
+                  View a gif of the project or click the button below to view
+                  the website!
                 </motion.p>
 
                 <motion.div
@@ -198,9 +241,13 @@ const Work = () => {
                   variants={buttonAnim}
                   initial="hidden"
                   animate="show"
-                  className="work-button-container"
                 >
-                  <a href="/" className="work-button">
+                  <a
+                    href="https://rock-paper-scissors-jw.herokuapp.com"
+                    className="work-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     See R.P.S!
                   </a>
                 </motion.div>
@@ -214,15 +261,21 @@ const Work = () => {
                   variants={pAnim}
                   initial="hidden"
                   animate="show"
-                  className="primary-text-color"
                   // variants={pAnim}
                   // initial="initial"
                   // animate="animate"
                   // exit="exit"
                 >
-                  <a href="/">Netflix!</a> This a recreation of the popular
-                  Netflix landing page. View a gif of the project or click the
-                  button below to view the website!
+                  <a
+                    href="https://netflix-by-jw.herokuapp.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Netflix!
+                  </a>{" "}
+                  This a recreation of the popular Netflix landing page. View a
+                  gif of the project or click the button below to view the
+                  website!
                 </motion.p>
 
                 <motion.div
@@ -230,9 +283,13 @@ const Work = () => {
                   variants={buttonAnim}
                   initial="hidden"
                   animate="show"
-                  className="work-button-container"
                 >
-                  <a href="/" className="work-button">
+                  <a
+                    href="https://netflix-by-jw.herokuapp.com/"
+                    className="work-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     See Netflix!
                   </a>
                 </motion.div>
@@ -242,12 +299,11 @@ const Work = () => {
         </div>
         <div className="work-content-bottom">
           {activeProject === 1 && (
-            <div
+            <motion.div
               className="work-gif"
-              // variants={gifAnim}
-              // initial="initial"
-              // animate="animate"
-              // exit="exit"
+              variants={gifAnim}
+              initial="hidden"
+              animate="show"
             >
               <iframe
                 src="https://giphy.com/embed/3WYiNa7vx0w19jGQKz"
@@ -259,19 +315,22 @@ const Work = () => {
                 allowFullScreen
               ></iframe>
               <p>
-                <a href="https://giphy.com/gifs/3WYiNa7vx0w19jGQKz">
+                <a
+                  href="https://giphy.com/gifs/3WYiNa7vx0w19jGQKz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   via GIPHY
                 </a>
               </p>
-            </div>
+            </motion.div>
           )}
           {activeProject === 2 && (
-            <div
+            <motion.div
               className="work-gif"
-              // variants={gifAnim}
-              // initial="initial"
-              // animate="animate"
-              // exit="exit"
+              variants={gifAnim}
+              initial="hidden"
+              animate="show"
             >
               <iframe
                 src="https://giphy.com/embed/BC4xNxQop600BUt8YU"
@@ -283,20 +342,23 @@ const Work = () => {
                 allowFullScreen
               ></iframe>
               <p>
-                <a href="https://giphy.com/gifs/BC4xNxQop600BUt8YU">
+                <a
+                  href="https://giphy.com/gifs/BC4xNxQop600BUt8YU"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   via GIPHY
                 </a>
               </p>
-            </div>
+            </motion.div>
           )}
 
           {activeProject === 3 && (
-            <div
+            <motion.div
               className="work-gif"
-              // variants={gifAnim}
-              // initial="initial"
-              // animate="animate"
-              // exit="exit"
+              variants={gifAnim}
+              initial="hidden"
+              animate="show"
             >
               <iframe
                 src="https://giphy.com/embed/OCR5FpTNg4iizSCWfG"
@@ -308,19 +370,22 @@ const Work = () => {
                 allowFullScreen
               ></iframe>
               <p>
-                <a href="https://giphy.com/gifs/OCR5FpTNg4iizSCWfG">
+                <a
+                  href="https://giphy.com/gifs/OCR5FpTNg4iizSCWfG"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   via GIPHY
                 </a>
               </p>
-            </div>
+            </motion.div>
           )}
           {activeProject === 4 && (
-            <div
+            <motion.div
               className="work-gif"
-              // variants={gifAnim}
-              // initial="initial"
-              // animate="animate"
-              // exit="exit"
+              variants={gifAnim}
+              initial="hidden"
+              animate="show"
             >
               <iframe
                 src="https://giphy.com/embed/oU4N9ODTfjLr0UeKQI"
@@ -332,11 +397,15 @@ const Work = () => {
                 allowFullScreen
               ></iframe>
               <p>
-                <a href="https://giphy.com/gifs/oU4N9ODTfjLr0UeKQI">
+                <a
+                  href="https://giphy.com/gifs/oU4N9ODTfjLr0UeKQI"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   via GIPHY
                 </a>
               </p>
-            </div>
+            </motion.div>
           )}
         </div>
       </motion.div>
@@ -354,7 +423,7 @@ const WorkContainer = styled(motion.div)`
   top: 200%;
   h3 {
     font-size: 5vw;
-    letter-spacing: 4rem;
+    letter-spacing: 4vw;
     writing-mode: vertical-lr;
     text-orientation: upright;
     display: flex;
@@ -457,7 +526,6 @@ const WorkContainer = styled(motion.div)`
           border-radius: 1rem;
         }
         p {
-          transform: translateX(24rem);
           a {
             text-decoration: none;
             color: rgb(70, 162, 159);

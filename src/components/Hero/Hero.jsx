@@ -1,12 +1,76 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import DesktopNav from "../Nav/DesktopNav";
 import MobileNav from "../Nav/MobileNav";
 
 import BgShapes from "../../images/bg-shapes.png";
 import BgWords from "../../images/bg-words.png";
+
+const bgAnim = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 2.8,
+    },
+  },
+};
+
+const h2Anim = {
+  hidden: {
+    opacity: 0,
+    y: "-100vh",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 1,
+      stiffness: 120,
+      damping: 10,
+      delay: 3,
+    },
+  },
+};
+
+const h4Anim = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+
+    transition: {
+      delay: 4,
+      duration: 1.5,
+    },
+  },
+};
+
+const h6Anim = {
+  hidden: {
+    opacity: 0,
+    y: "100vh",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 1,
+      stiffness: 80,
+      damping: 12,
+      // bounce: 10,
+      delay: 5,
+    },
+  },
+};
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -47,15 +111,55 @@ const Hero = () => {
       <MobileNav />
 
       <div className="hero-content">
-        <img src={BgShapes} className="bg-shapes" alt="bg shapes" />
-        <img src={BgWords} className="bg-words" alt="bg words" />
+        <motion.img
+          src={BgShapes}
+          className="bg-shapes"
+          alt="bg shapes"
+          variants={bgAnim}
+          initial="hidden"
+          animate="show"
+        />
+        <motion.img
+          src={BgWords}
+          className="bg-words"
+          alt="bg words"
+          variants={bgAnim}
+          initial="hidden"
+          animate="show"
+        />
         <div className="hero-text">
-          <h2 className="primary-text-color h2">Hi! My name is Jacob!</h2>
-          <h4 className="primary-text-color h4">
+          <motion.h2
+            className="primary-text-color h2"
+            variants={h2Anim}
+            initial="hidden"
+            animate="show"
+          >
+            Hi! My name is Jacob!
+          </motion.h2>
+          <motion.h4
+            className="primary-text-color h4"
+            variants={h4Anim}
+            initial="hidden"
+            animate="show"
+          >
             I am a Front-End Web Developer
-          </h4>
-          <h4 className="primary-text-color h4 h4-bottom">& Designer</h4>
-          <h6 className="primary-text-color h6">Cleveland, OH</h6>
+          </motion.h4>
+          <motion.h4
+            className="primary-text-color h4 h4-bottom"
+            variants={h4Anim}
+            initial="hidden"
+            animate="show"
+          >
+            & Designer
+          </motion.h4>
+          <motion.h6
+            className="primary-text-color h6"
+            variants={h6Anim}
+            initial="hidden"
+            animate="show"
+          >
+            Cleveland, OH
+          </motion.h6>
         </div>
       </div>
     </HeroContainer>
