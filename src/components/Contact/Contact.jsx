@@ -191,7 +191,7 @@ const ContactContainer = styled(motion.div)`
         border-radius: 1vw;
         padding: 1vw;
         border: 2px solid var(--tertiary-color);
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         resize: none;
         background: rgba(0, 0, 0, 0.3);
         &:focus {
@@ -231,7 +231,7 @@ const ContactContainer = styled(motion.div)`
         letter-spacing: 0.5vw;
         position: absolute;
         left: 36.2vw;
-        top: 35vw;
+        top: 35.5vw;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
       }
 

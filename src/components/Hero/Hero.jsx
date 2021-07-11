@@ -88,23 +88,29 @@ const Hero = () => {
 
   const bgShapesEl = document.querySelectorAll(".bg-shapes");
   bgShapesEl.forEach((item) => {
-    item.style.transform = `translateY(${offsetY * 0.6}px)`;
+    item.style.transform = `translateY(${offsetY * 0.5}px)`;
   });
 
-  const h2El = document.querySelectorAll(".h2");
-  h2El.forEach((item) => {
-    item.style.transform = `translateY(${offsetY * -0.5}px)`;
+  const heroTextEl = document.querySelectorAll(".hero-text");
+  heroTextEl.forEach((item) => {
+    item.style.transform = `translateY(${offsetY * -0.5})`;
   });
 
-  const h4El = document.querySelectorAll(".h4");
-  h4El.forEach((item) => {
-    item.style.transform = `translateY(${offsetY * -0.3}px)`;
-  });
+  // const h2El = document.querySelectorAll(".h2");
+  // h2El.forEach((item) => {
+  //   item.style.transform = `translateY(${offsetY * -0.5}px)`;
+  // });
 
-  const h6El = document.querySelectorAll(".h6");
-  h6El.forEach((item) => {
-    item.style.transform = `translateY(${offsetY * -0.1}px)`;
-  });
+  // const h4El = document.querySelectorAll(".h4");
+  // h4El.forEach((item) => {
+  //   item.style.transform = `translateY(${offsetY * -0.3}px)`;
+  // });
+
+  // const h6El = document.querySelectorAll(".h6");
+  // h6El.forEach((item) => {
+  //   item.style.transform = `translateY(${offsetY * -0.1}px)`;
+  // });
+
   return (
     <HeroContainer className="bg-dark">
       <DesktopNav />
