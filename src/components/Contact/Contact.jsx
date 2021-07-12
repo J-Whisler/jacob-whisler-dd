@@ -115,15 +115,16 @@ const Contact = () => {
             required
           ></textarea>
           <AnimatePresence>
-            {/* {emailSent && ( */}
-            <motion.h5
-              variants={emailSentAnim}
-              initial="hidden"
-              animate="show"
-              exit="exit"
-            >
-              Email Sent!
-            </motion.h5>
+            {emailSent && (
+              <motion.h5
+                variants={emailSentAnim}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+              >
+                Email Sent!
+              </motion.h5>
+            )}
           </AnimatePresence>
           <button type="submit">Send Email</button>
 
