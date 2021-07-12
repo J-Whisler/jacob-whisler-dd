@@ -12,13 +12,16 @@ const MobileNav = () => {
   };
 
   return (
-    <MobileNavContainer className="bg-medium">
+    <MobileNavContainer className="bg-medium" open={open}>
       <div className="mobile-logo">
         <img src={Logo} alt="logo" />
       </div>
       <div className="hamburger-links-container">
         <div className="hamburger" onClick={handleOpen}>
-          <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
+          {/* <i className={open ? "fas fa-times" : "fas fa-bars"}></i> */}
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <div className={open ? "links links-active bg-medium" : "links"}>
           <motion.ul className="primary-text-color">
@@ -131,9 +134,31 @@ const MobileNavContainer = styled(motion.div)`
       .hamburger {
         margin-right: 5vw;
         cursor: pointer;
-        i {
+        /* i {
           color: rgb(70, 162, 159);
           font-size: 8vw;
+        } */
+        div {
+          background: ${({ open }) =>
+            open ? "rgba(116, 115, 115)" : "rgb(70, 162, 159)"};
+          width: 8vw;
+          height: 1vw;
+          margin: 1.5vw 0;
+          border-radius: 1rem;
+          transition: all 0.5s ease-in-out;
+          &:nth-child(1) {
+            transform: ${({ open }) =>
+              open ? "rotate(50deg) translateY(1.8rem)" : "rotate(0deg)"};
+          }
+          &:nth-child(2) {
+            transform: ${({ open }) =>
+              open ? "translateX(100%)" : "translateX(0)"};
+            opacity: ${({ open }) => (open ? 0 : 1)};
+          }
+          &:nth-child(3) {
+            transform: ${({ open }) =>
+              open ? "rotate(-50deg) translateY(-1.8rem)" : "rotate(0deg)"};
+          }
         }
       }
       .links {
