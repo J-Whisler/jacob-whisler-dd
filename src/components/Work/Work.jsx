@@ -78,7 +78,7 @@ const Work = () => {
 
   const { ref, inView } = useInView();
   return (
-    <WorkContainer id="work" className="bg-dark">
+    <WorkContainer id="work" className="bg-dark" id="work">
       <h3 className="secondary-text-color">Work</h3>
       <motion.div
         className="work-content-container"
@@ -536,6 +536,90 @@ const WorkContainer = styled(motion.div)`
               opacity: 0.8;
               border-bottom: 2px solid rgb(70, 162, 159);
             }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    top: 150%;
+    height: 80vh;
+    h3 {
+      writing-mode: horizontal-tb;
+      letter-spacing: 10vw;
+      font-size: 8vw;
+      margin-left: 25vw;
+      margin-top: 8vw;
+    }
+    .work-content-container {
+      width: 100%;
+      height: 88%;
+      left: 0;
+      top: 12%;
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      .work-content-top {
+        .work-content-top-headers {
+          display: flex;
+          width: 95%;
+          margin: auto;
+          h4 {
+            font-size: 5vw;
+          }
+        }
+        .work-content-info {
+          p {
+            width: 90%;
+            font-size: 3vw;
+            line-height: 4vw;
+            position: relative;
+            top: -7vw;
+          }
+          .work-button-container {
+            width: 35%;
+            position: relative;
+            top: -8vw;
+            .work-button {
+              width: 30vw;
+              font-size: 3vw;
+              padding: 2vw;
+              position: relative;
+              left: -2vw;
+            }
+          }
+        }
+      }
+      .work-content-bottom {
+        .work-gif {
+          position: relative;
+          top: -7vw;
+          p {
+            a {
+              font-size: 2.5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 415px) {
+    .work-content-container {
+      .work-content-top {
+        .work-content-top-headers {
+          display: flex;
+          width: 99%;
+          margin-left: 1vw;
+        }
+        .work-content-info {
+          width: 85%;
+        }
+      }
+      .work-content-bottom {
+        .work-gif {
+          top: -10vw;
+          iframe {
+            width: 160%;
+            margin-left: -18vw;
           }
         }
       }

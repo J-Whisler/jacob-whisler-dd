@@ -71,7 +71,7 @@ const Contact = () => {
     }, 4000);
   };
   return (
-    <ContactContainer className="bg-medium">
+    <ContactContainer className="bg-medium" id="contact">
       <h3 className="secondary-text-color">Contact</h3>
       <motion.div
         className="form-container"
@@ -115,21 +115,20 @@ const Contact = () => {
             required
           ></textarea>
           <AnimatePresence>
-            {emailSent && (
-              <motion.h5
-                variants={emailSentAnim}
-                initial="hidden"
-                animate="show"
-                exit="exit"
-              >
-                Email Sent!
-              </motion.h5>
-            )}
+            {/* {emailSent && ( */}
+            <motion.h5
+              variants={emailSentAnim}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
+              Email Sent!
+            </motion.h5>
           </AnimatePresence>
           <button type="submit">Send Email</button>
 
           <h6 className="top primary-text-color">
-            <Link to="about" smooth={true} duration={1000} className="link">
+            <Link to="hero" smooth={true} duration={1000} className="link">
               Back to top <i className="fas fa-arrow-up"></i>
             </Link>
           </h6>
@@ -257,36 +256,66 @@ const ContactContainer = styled(motion.div)`
     }
   }
   @media (max-width: 768px) {
+    top: 230%;
+    height: 100vh;
     h3 {
-      font-size: 10vw;
-      margin-top: 10vw;
-      letter-spacing: 5vw;
+      writing-mode: horizontal-tb;
+      letter-spacing: 7vw;
+      font-size: 8vw;
+      margin-left: 13vw;
+      margin-top: 8vw;
     }
+
     .form-container {
       position: absolute;
-      margin-left: 2vw;
+      margin-left: -5vw;
+      margin-top: -15vw;
       .contact-form {
         width: 80%;
-        height: 80%;
+        height: 50%;
         input {
           font-size: 6vw;
         }
         textarea {
           font-size: 5vw;
-          margin-bottom: 10vw;
+          margin-bottom: 9vw;
         }
         button {
           font-size: 6vw;
         }
         .top {
           left: 17vw;
-          top: 85vw;
+          top: 102vw;
           font-size: 3vw;
+        }
+        textarea {
+          margin-bottom: 13vw;
         }
         h5 {
           font-size: 5vw;
-          margin-top: 71vw;
-          margin-left: -7.5vw;
+          margin-top: 104vw;
+          margin-left: -8.5vw;
+        }
+      }
+    }
+  }
+  @media (max-width: 415px) {
+    .form-container {
+      .contact-form {
+        .top {
+          top: 110vw;
+        }
+        h5 {
+          margin-top: 95vw;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 380px) {
+    .form-container {
+      .contact-form {
+        .top {
         }
       }
     }

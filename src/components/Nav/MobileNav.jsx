@@ -25,16 +25,37 @@ const MobileNav = () => {
             <Link
               className="nav-link nav-link-home"
               onClick={() => setOpen(false)}
+              to="hero"
+              smooth={true}
+              duration={1000}
             >
               Home
             </Link>
-            <Link className="nav-link" onClick={() => setOpen(false)}>
+            <Link
+              className="nav-link"
+              onClick={() => setOpen(false)}
+              to="skills"
+              smooth={true}
+              duration={1000}
+            >
               Skills
             </Link>
-            <Link className="nav-link" onClick={() => setOpen(false)}>
+            <Link
+              className="nav-link"
+              onClick={() => setOpen(false)}
+              to="work"
+              smooth={true}
+              duration={1000}
+            >
               Work
             </Link>
-            <Link className="nav-link" onClick={() => setOpen(false)}>
+            <Link
+              className="nav-link"
+              onClick={() => setOpen(false)}
+              to="contact"
+              smooth={true}
+              duration={1000}
+            >
               Contact
             </Link>
           </motion.ul>
@@ -70,7 +91,9 @@ const MobileNav = () => {
               </a>
             </div>
             <div className="resume-button-container">
-              <Button className="resume-button">Resume</Button>
+              <a href="/" className="resume-button">
+                Resume
+              </a>
             </div>
           </div>
         </div>
@@ -90,7 +113,6 @@ const MobileNavContainer = styled(motion.div)`
     border-bottom: 7px solid rgb(116, 115, 115);
     height: 17vh;
     padding: 0 2rem;
-
     z-index: 10;
     .mobile-logo {
       height: 17vh;
@@ -154,6 +176,35 @@ const MobileNavContainer = styled(motion.div)`
               i {
                 font-size: 5vw;
                 color: rgb(70, 162, 159);
+              }
+            }
+          }
+          .resume-button-container {
+            border: 2px solid red;
+            .resume-button {
+              display: flex;
+              justify-content: center;
+              margin-left: 10vw;
+              width: 30vw;
+              border-radius: 2rem;
+              background-color: rgb(70, 162, 159);
+              border: none;
+              margin: auto;
+              font-size: 5vw;
+              color: rgb(0, 0, 0);
+              text-decoration: none;
+              letter-spacing: 0.2vw;
+              padding: 1vw;
+              cursor: pointer;
+              transition: all 0.3s ease-in-out;
+              @media (max-width: 415px) {
+                width: 50vw;
+                font-size: 8vw;
+              }
+              &:hover {
+                box-shadow: 0px 0px 20px rgba(70, 162, 159, 0.7);
+                text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+                transform: scale(1.05);
               }
             }
           }

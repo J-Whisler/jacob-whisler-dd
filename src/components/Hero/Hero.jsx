@@ -96,23 +96,8 @@ const Hero = () => {
     item.style.transform = `translateY(${offsetY * -0.5})`;
   });
 
-  // const h2El = document.querySelectorAll(".h2");
-  // h2El.forEach((item) => {
-  //   item.style.transform = `translateY(${offsetY * -0.5}px)`;
-  // });
-
-  // const h4El = document.querySelectorAll(".h4");
-  // h4El.forEach((item) => {
-  //   item.style.transform = `translateY(${offsetY * -0.3}px)`;
-  // });
-
-  // const h6El = document.querySelectorAll(".h6");
-  // h6El.forEach((item) => {
-  //   item.style.transform = `translateY(${offsetY * -0.1}px)`;
-  // });
-
   return (
-    <HeroContainer className="bg-dark">
+    <HeroContainer className="bg-dark" id="hero">
       <DesktopNav />
       <MobileNav />
 
@@ -216,7 +201,7 @@ const HeroContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
     .hero-content {
       width: 100%;
       height: 83%;

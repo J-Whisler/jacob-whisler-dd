@@ -66,10 +66,23 @@ const DesktopNav = () => {
         animate="show"
       >
         <motion.ul className="primary-text-color">
-          <Link className="nav-link nav-link-home">Home</Link>
-          <Link className="nav-link">Skills</Link>
-          <Link className="nav-link">Work</Link>
-          <Link className="nav-link">Contact</Link>
+          <Link
+            className="nav-link nav-link-home"
+            to="hero"
+            smooth="true"
+            duration={1000}
+          >
+            Home
+          </Link>
+          <Link className="nav-link" to="skills" smooth="true" duration={1000}>
+            Skills
+          </Link>
+          <Link className="nav-link" to="work" smooth="true" duration={1000}>
+            Work
+          </Link>
+          <Link className="nav-link" to="contact" smooth="true" duration={1000}>
+            Contact
+          </Link>
         </motion.ul>
       </motion.div>
       <motion.div
