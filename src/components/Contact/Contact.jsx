@@ -114,17 +114,25 @@ const Contact = () => {
             placeholder="Please type your message"
             required
           ></textarea>
-          <AnimatePresence>
-            {emailSent && (
-              <motion.h5
-                variants={emailSentAnim}
-                initial="hidden"
-                animate="show"
-                exit="exit"
-              >
-                Email Sent!
-              </motion.h5>
-            )}
+          <div className="form-bottom">
+            <h5>Email Sent!</h5>
+            <button type="submit">Send Email!</button>
+            <Link to="hero" smooth={true} duration={1000}>
+              <h6 className="primary-text-color">
+                Back to Top <i className="fas fa-arrow-up"></i>
+              </h6>
+            </Link>
+          </div>
+          {/* <AnimatePresence>
+           
+            <motion.h5
+              variants={emailSentAnim}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
+              Email Sent!
+            </motion.h5>
           </AnimatePresence>
           <button type="submit">Send Email</button>
 
@@ -132,7 +140,7 @@ const Contact = () => {
             <Link to="hero" smooth={true} duration={1000} className="link">
               Back to top <i className="fas fa-arrow-up"></i>
             </Link>
-          </h6>
+          </h6> */}
         </form>
       </motion.div>
     </ContactContainer>
@@ -187,73 +195,53 @@ const ContactContainer = styled(motion.div)`
       }
       textarea {
         font-size: 1.5vw;
-        font-family: var(--main-text);
         border-radius: 1vw;
+        border: none;
         padding: 1vw;
-        border: 2px solid var(--tertiary-color);
-        margin-bottom: 2vw;
         resize: none;
         background: rgba(0, 0, 0, 0.3);
+        margin-bottom: 2vw;
         &:focus {
-          border: 3px solid var(--secondary-color);
           outline: none;
         }
       }
-      button {
+      .form-bottom {
+        border: 2px solid blue;
         display: flex;
-        width: 50%;
-        margin: auto;
-        justify-content: center;
-        background: rgb(70, 162, 159);
-        outline: none;
-        border: none;
-        border-radius: 2rem;
-        font-size: 2vw;
-        letter-spacing: 0.2vw;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-          box-shadow: 0px 0px 20px rgba(70, 162, 159, 0.7);
-          transform: scale(1.05);
+        flex-direction: column;
+        height: 25vw;
+        justify-content: space-between;
+        align-items: center;
+        h5 {
+          color: rgb(70, 162, 159);
+          font-size: 2vw;
+          letter-spacing: 0.5vw;
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+          margin-bottom: 1.5vw;
         }
-      }
-      .top {
-        position: absolute;
-        margin-top: 41vw;
-        margin-left: 17vw;
-        font-size: 1.5vw;
-        cursor: pointer;
-      }
-
-      h5 {
-        color: rgb(70, 162, 159);
-        font-size: 2vw;
-        letter-spacing: 0.5vw;
-        position: absolute;
-        left: 36.2vw;
-        top: 35.5vw;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-      }
-
-      /* .top {
-      
-        padding: 2rem 0.2rem;
-        position: absolute;
-        top: -7rem;
-        left: 52rem;
-        .link {
+        button {
+          display: flex;
+          width: 50%;
+          justify-content: center;
+          background: rgb(70, 162, 159);
+          outline: none;
+          border: none;
+          border-radius: 2rem;
+          font-size: 2vw;
+          letter-spacing: 0.2vw;
           cursor: pointer;
-        }
-        a {
-          text-decoration: none;
-          color: var(--tertiary-color);
-          font-family: var(--main-text);
-          font-size: 1.2rem;
+          margin-bottom: 1.5vw;
+          transition: all 0.3s ease-in-out;
           &:hover {
-            opacity: 0.8;
+            box-shadow: 0px 0px 20px rgba(70, 162, 159, 0.7);
+            transform: scale(1.05);
           }
         }
-      } */
+        h6 {
+          font-size: 1.5vw;
+          cursor: pointer;
+        }
+      }
     }
   }
   @media (max-width: 768px) {
@@ -279,44 +267,20 @@ const ContactContainer = styled(motion.div)`
         }
         textarea {
           font-size: 5vw;
-          margin-bottom: 9vw;
+          margin-bottom: 3vw;
         }
-        button {
-          font-size: 6vw;
-        }
-        .top {
-          left: 17vw;
-          top: 102vw;
-          font-size: 3vw;
-        }
-        textarea {
-          margin-bottom: 13vw;
-        }
-        h5 {
-          font-size: 5vw;
-          margin-top: 104vw;
-          margin-left: -8.5vw;
-        }
-      }
-    }
-  }
-  @media (max-width: 415px) {
-    .form-container {
-      .contact-form {
-        .top {
-          top: 110vw;
-        }
-        h5 {
-          margin-top: 95vw;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 380px) {
-    .form-container {
-      .contact-form {
-        .top {
+        .form-bottom {
+          h5 {
+            font-size: 4.5vw;
+            margin-bottom: 3vw;
+          }
+          button {
+            font-size: 4vw;
+            margin-bottom: 3vw;
+          }
+          h6 {
+            font-size: 3vw;
+          }
         }
       }
     }
