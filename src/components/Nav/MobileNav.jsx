@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Logo from "../../images/Logo.png";
 import { Link } from "react-scroll";
-import Button from "../Shared/Button";
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
@@ -93,11 +92,14 @@ const MobileNav = () => {
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
-            <div className="resume-button-container">
-              <a href="/" className="resume-button">
+            {/* <div className="resume-button-container">
+              <a
+                href="file:///C:/Users/15672/Downloads/JacobWhislerResumeFinal.pdf"
+                className="resume-button"
+              >
                 Resume
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -204,8 +206,7 @@ const MobileNavContainer = styled(motion.div)`
               }
             }
           }
-          .resume-button-container {
-            border: 2px solid red;
+          /* .resume-button-container {
             .resume-button {
               display: flex;
               justify-content: center;
@@ -232,7 +233,7 @@ const MobileNavContainer = styled(motion.div)`
                 transform: scale(1.05);
               }
             }
-          }
+          } */
         }
       }
     }

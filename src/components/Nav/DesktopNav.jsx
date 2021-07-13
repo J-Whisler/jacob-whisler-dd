@@ -121,12 +121,17 @@ const DesktopNav = () => {
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
-
+        {/* 
         <div className="resume-button-container">
-          <a href="/" className="resume-button">
+          <a
+            href="file:///C:/Users/15672/Downloads/JacobWhislerResumeFinal.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="resume-button"
+          >
             Resume
           </a>
-        </div>
+        </div> */}
       </motion.div>
     </DesktopNavContainer>
   );
@@ -198,7 +203,7 @@ const DesktopNavContainer = styled(motion.div)`
         }
       }
     }
-    .resume-button-container {
+    /* .resume-button-container {
       .resume-button {
         display: flex;
         justify-content: center;
@@ -220,7 +225,7 @@ const DesktopNavContainer = styled(motion.div)`
           transform: scale(1.05);
         }
       }
-    }
+    } */
   }
   @media (max-width: 768px) {
     display: none;
