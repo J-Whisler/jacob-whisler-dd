@@ -524,6 +524,7 @@ const WorkContainer = styled(motion.div)`
       .work-gif {
         iframe {
           border-radius: 1rem;
+          object-fit: cover;
         }
         p {
           a {
