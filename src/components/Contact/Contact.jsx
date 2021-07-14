@@ -190,7 +190,7 @@ const ContactContainer = styled(motion.div)`
       flex-direction: column;
       width: 50%;
       height: 90%;
-      padding-top: 5vw;
+      /* padding-top: 2vw; */
       input {
         width: 100%;
         margin-bottom: 1.5vw;
