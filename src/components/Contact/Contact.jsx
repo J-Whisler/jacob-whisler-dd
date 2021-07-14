@@ -8,11 +8,11 @@ import { useInView } from "react-intersection-observer";
 const emailSentAnim = {
   hidden: {
     opacity: 0,
-    y: "2vh",
+    y: 0,
   },
   show: {
     opacity: 1,
-    y: 0,
+    y: "-2vh",
     transition: {
       type: "spring",
       mass: 1,
@@ -22,7 +22,7 @@ const emailSentAnim = {
   },
   exit: {
     opacity: 0,
-    y: "2vh",
+    y: 0,
   },
 };
 
@@ -115,7 +115,18 @@ const Contact = () => {
             required
           ></textarea>
           <div className="form-bottom">
-            <h5>Email Sent!</h5>
+            <AnimatePresence>
+              {emailSent && (
+                <motion.h5
+                  variants={emailSentAnim}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                >
+                  Email Sent!
+                </motion.h5>
+              )}
+            </AnimatePresence>
             <button type="submit">Send Email!</button>
             <Link to="hero" smooth={true} duration={1000}>
               <h6 className="primary-text-color">
@@ -163,11 +174,11 @@ const ContactContainer = styled(motion.div)`
     text-shadow: 0px 10px 2px rgb(0, 0, 0);
   }
   .form-container {
-    width: 88%;
+    width: 80%;
     height: 100%;
     display: flex;
     position: absolute;
-    left: 10%;
+    left: 12%;
     top: 0;
     margin: auto;
     justify-content: center;
@@ -179,6 +190,7 @@ const ContactContainer = styled(motion.div)`
       flex-direction: column;
       width: 50%;
       height: 90%;
+      padding-top: 5vw;
       input {
         width: 100%;
         margin-bottom: 1.5vw;
@@ -206,11 +218,10 @@ const ContactContainer = styled(motion.div)`
         }
       }
       .form-bottom {
-        border: 2px solid blue;
         display: flex;
         flex-direction: column;
         height: 25vw;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         h5 {
           color: rgb(70, 162, 159);
